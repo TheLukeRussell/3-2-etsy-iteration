@@ -27,6 +27,7 @@ After completing this assignment, you will be able to effectively use
 
 ### Requirements
 
+* Create a `main.js` file
 * Link the `items.js` before your `main.js` script tag
 * Using the global `items` variable created in `items.js`, use `array.map()`, `array.reduce()`, `array.forEach()`, and `array.filter()` to help you through the assignment questions
 * The answers should be logged out to your console using `console.log()`
