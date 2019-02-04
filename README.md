@@ -106,4 +106,5 @@ personalized harry potter glass
 ```
 ## Hey, Mikey, I Think He Likes It Mode
 
-Create a second branch in your project. You may name it whatever you like. Refactor your answers using the [Underscore](http://underscorejs.org/) library and push your work GitHub.
+* Create a second branch in your project. You may name it whatever you like.
+* Refactor your answers using the [Underscore](http://underscorejs.org/) library and push your work GitHub.
