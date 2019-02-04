@@ -33,6 +33,8 @@ After completing this assignment, you will be able to effectively use
 * Make sure the output matches the answers below each question
 * Please comment your code as you walk through your process
 * It is suggested that you write functions that return values, not just functions that call `console.log`
+* Publish your project using GitHub Pages
+* Add the GitHub Pages link to your site's repository on GitHub
 
 ## I'm a Web Developer Mode
 
@@ -106,5 +108,5 @@ personalized harry potter glass
 ```
 ## Hey, Mikey, I Think He Likes It Mode
 
-* Create a second branch in your project. You may name it whatever you like.
-* Refactor your answers using the [Underscore](http://underscorejs.org/) library and push your work GitHub.
+* Create a second branch in your project; you may name it whatever you like
+* Refactor your answers using the [Underscore](http://underscorejs.org/) library and push your work GitHub
