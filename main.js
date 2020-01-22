@@ -11,7 +11,7 @@ let averagePrice = itemsPrice.reduce((acc, i) => {
 // console.log(averagePrice);
 
 averageTotalPrice = (averagePrice / items.length);
-console.log((`The total average price for all of the items is $${averageTotalPrice}`));
+console.log((`The total average price for all of the items is $${averageTotalPrice.toFixed(2)}`));
 
 // 2. Show me how to get an array of items that cost between $14.00 and $18.00 USD. Please `console.log` the answer.
 
@@ -20,7 +20,7 @@ let usdFilter = (items) => {
 }
 
 let americanItems = items.filter(usdFilter);
-let amountFilter = (items)  => {
+let amountFilter = (items) => {
   return (items.price >= 14.00) && (items.price <= 18.00)
 }
 let midPriceItems = americanItems.filter(amountFilter);
@@ -46,8 +46,7 @@ console.log(`The lone UK item is the ${ukItemTitle} and it costs ${ukItemPrice} 
 let materials = items.filter((items) => {
   return items.materials.includes('wood')
 });
-console.log(materials);
-let woodItems = materials.map ((items) => {
+let woodItems = materials.map((items) => {
   return items.title;
 })
 console.log(`If you're looking for items that include wood, look through these items: ${woodItems}`);
@@ -58,8 +57,25 @@ let eightPlusMats = items.filter((items) => {
   return items.materials.length > 8;
 })
 
-let eightPlusItems = eightPlusMats.map((items) => {
+let itemTitles = eightPlusMats.map((items) => {
+  return items.title;
+
+});
+
+let itemMats = eightPlusMats.map((items) => {
+  return items.materials;
+})
+
+console.log(`${itemTitles[0]} uses ${itemMats[0].length} materials which includes a ${itemMats[0]}`);
+console.log(`Also ${itemTitles[1]} uses ${itemMats[1].length} materials which includes a ${itemMats[1]}`);
+
+// 6. Show me how to calculate how many items were made by their sellers. Please `console.log` your answer.
+
+let whoMade = items.filter((items) => {
+  return items.who_made === 'i_did';
+});
+
+let whoMadeItem = whoMade.map((items) => {
   return items.title;
 })
-console.log(`'Items that include eight or more materials include: ${eightPlusItems}`);
-// 6. Show me how to calculate how many items were made by their sellers. Please `console.log` your answer.
+console.log(`${whoMadeItem.length} items were made by their sellers`);
