@@ -11,7 +11,7 @@ let averagePrice = itemsPrice.reduce((acc, i) => {
 // console.log(averagePrice);
 
 averageTotalPrice = (averagePrice / items.length);
-console.log(averageTotalPrice);
+console.log((`The total average price for all of the items is $${averageTotalPrice}`));
 
 // 2. Show me how to get an array of items that cost between $14.00 and $18.00 USD. Please `console.log` the answer.
 
@@ -20,22 +20,46 @@ let usdFilter = (items) => {
 }
 
 let americanItems = items.filter(usdFilter);
-let amountFilter = (value)  => {
-  return (value.price > 14.00) && (value.price < 18.00)
+let amountFilter = (items)  => {
+  return (items.price >= 14.00) && (items.price <= 18.00)
 }
 let midPriceItems = americanItems.filter(amountFilter);
 console.log('The items that cost between $14.00 USD and $18.00 USD:', midPriceItems);
 
 // 3. Show me how find the item with a "GBP" currency code and print its name and price. Please `console.log` the one you find.
 
+let gbpFilter = (items) => {
+  return items.currency_code === 'GBP';
+}
+let ukItem = items.filter(gbpFilter);
+let ukItemTitle = ukItem.map((items) => {
+  return items.title;
+});
+let ukItemPrice = ukItem.map((items) => {
+  return items.price;
+});
+console.log(`The lone UK item is the ${ukItemTitle} and it costs ${ukItemPrice} pounds`);
 
 
 // 4. Show me how to find which items are made of wood. Please `console.log` the ones you find.
 
-
+let materials = items.filter((items) => {
+  return items.materials.includes('wood')
+});
+console.log(materials);
+let woodItems = materials.map ((items) => {
+  return items.title;
+})
+console.log(`If you're looking for items that include wood, look through these items: ${woodItems}`);
 
 // 5. Show me how to find which items are made of eight or more materials. Please `console.log` the ones you find.
 
+let eightPlusMats = items.filter((items) => {
+  return items.materials.length > 8;
+})
 
-
+let eightPlusItems = eightPlusMats.map((items) => {
+  return items.title;
+})
+console.log(`'Items that include eight or more materials include: ${eightPlusItems}`);
 // 6. Show me how to calculate how many items were made by their sellers. Please `console.log` your answer.
